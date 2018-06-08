@@ -69,6 +69,7 @@ if __name__ == "__main__":
 						queue.append(callee)
 			
 			security_hooks = check_callmap(c, caller2callee, False)	# LSM hooks called by the system call
+			security_hooks = set(security_hooks)
 			output.write(syscallname + "\t" + str(security_hooks) + "\n")
 
 	f.close()
